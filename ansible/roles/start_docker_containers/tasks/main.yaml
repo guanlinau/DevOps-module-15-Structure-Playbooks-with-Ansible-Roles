@@ -1,0 +1,13 @@
+- name: copy docker-compose file to ec2-server
+  copy:
+    src: docker-compose.yaml
+    dest: /home/ec2-user/docker-compose.yaml
+- name: Docker login
+  docker_login:
+    registry_url: "{{docker_register}"
+    username: "{{docker_username}}"
+    password: "{{docker_password}}"
+- name: Start the application from docker docker-compose
+  docker_compose:
+    project_src: /home/ec2-user
+    state: present

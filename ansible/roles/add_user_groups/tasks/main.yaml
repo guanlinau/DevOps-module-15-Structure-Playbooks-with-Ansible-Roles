@@ -1,0 +1,7 @@
+- name: Add ec2-user to docker group
+  user:
+    name: ec2-user
+    groups: "{{docker}}"
+    append: yes
+- name: ec2-user reconnect to server session
+  meta: reset_connection

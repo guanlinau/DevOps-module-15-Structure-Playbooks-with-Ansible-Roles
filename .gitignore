@@ -1,0 +1,7 @@
+terraform-ec2-instance/.terraform/*
+
+terraform-ec2-instance/*.tfstate
+terraform-ec2-instance/*.tfstate.*
+terraform-ec2-instance/*.tfvars
+
+ansible/provider_vars
